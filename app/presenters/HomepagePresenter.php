@@ -17,4 +17,15 @@ class HomepagePresenter extends BasePresenter
 		$this->template->anyVariable = 'any value';
 	}
 
+	public function createComponentForm()
+	{
+		$form = new \Nette\Application\UI\Form();
+		$form->addRadioList('test', 'Test', ['One', 'Two'])
+			->setRequired('Select test')
+			->setDefaultValue(1);
+		$form->addSubmit('submit');
+
+		return $form;
+	}
+
 }
